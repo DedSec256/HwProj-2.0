@@ -17,7 +17,7 @@ namespace HwProj.Models
 	{
 		/// <summary>
 		/// Уникальный идентификатор курса
-		/// </summary>
+		/// </summary>        
 		public int    Id  { get; set; }
 		/// <summary>
 		/// Название курса
