@@ -69,7 +69,6 @@ namespace HwProj.Models
 	    {
 		    return new EditViewModel()
 		    {
-				Id = user.Id,
 			    Name = user.Name,
 			    Surname = user.Surname,
 			    Email = user.Email,

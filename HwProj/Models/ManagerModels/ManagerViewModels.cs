@@ -123,7 +123,6 @@ namespace HwProj.Models.ManagerModels
 		[Display(Name = "Пароль")]
 		[StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 6)]
 		public string Password { get; set; }
-		public string Id { get; set; }
 
 		[StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 6)]
 		[DataType(DataType.Password)]

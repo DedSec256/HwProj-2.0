@@ -21,26 +21,26 @@ namespace HwProj
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
-        {
-	        MailMessage mail = new MailMessage();
-	        SmtpClient SmtpServer = new SmtpClient(Settings.Default.MailClient);
+	    public Task SendAsync(IdentityMessage message)
+	    {
+		    MailMessage mail = new MailMessage();
+		    SmtpClient SmtpServer = new SmtpClient(Settings.Default.MailClient);
 
-			mail.From = new MailAddress(Settings.Default.MailUserName);
-	        mail.To.Add(message.Destination);
-	        mail.Subject = message.Subject;
-	        mail.Body = message.Body;
-	        mail.IsBodyHtml = true;
+		    mail.From = new MailAddress(Settings.Default.MailUserName);
+		    mail.To.Add(message.Destination);
+		    mail.Subject = message.Subject;
+		    mail.Body = message.Body;
+		    mail.IsBodyHtml = true;
 
-			SmtpServer.UseDefaultCredentials = false;
-	        SmtpServer.Port = 587;
-	        SmtpServer.Credentials = new System.Net.NetworkCredential
-				(Settings.Default.MailUserName, Settings.Default.MailPassword);
-	        SmtpServer.EnableSsl = true;
-			
-			// Подключите здесь службу электронной почты для отправки сообщения электронной почты.
-			return SmtpServer.SendMailAsync(mail);
-		}
+		    SmtpServer.UseDefaultCredentials = false;
+		    SmtpServer.Port = 587;
+		    SmtpServer.Credentials = new System.Net.NetworkCredential
+			    (Settings.Default.MailUserName, Settings.Default.MailPassword);
+		    SmtpServer.EnableSsl = true;
+
+		    // Подключите здесь службу электронной почты для отправки сообщения электронной почты.
+		    return SmtpServer.SendMailAsync(mail);
+	    }
     }
 
     // Настройка диспетчера пользователей приложения. UserManager определяется в ASP.NET Identity и используется приложением.
