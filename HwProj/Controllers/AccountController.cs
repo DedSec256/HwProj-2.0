@@ -79,7 +79,9 @@ namespace HwProj.Controllers
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
+                    return View("Lockout", 
+						new Error(){Message = UserManager.GetLockoutEndDate
+								(UserManager.FindByEmailAsync(model.Email).Result.Id).ToString()});
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:

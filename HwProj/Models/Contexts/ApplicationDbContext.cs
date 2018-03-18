@@ -10,6 +10,9 @@ using Microsoft.AspNet.Identity;
 
 namespace HwProj.Models.Contexts
 {
+	/// <summary>
+	/// Контекст базы данных пользователей
+	/// </summary>
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()

@@ -59,8 +59,14 @@ namespace HwProj.Models.ManagerModels
 		public Gender Gender { get; set; }
 	}
 
+	/// <summary>
+	/// Модель авторизации пользователя с помощью внешнего сервиса
+	/// </summary>
 	public class ExternalLoginConfirmationViewModel
 	{
+		/// <summary>
+		/// Почта пользователя
+		/// </summary>
 		[Required]
 		[Display(Name = "E-Mail")]
 		public string Email { get; set; }
@@ -96,6 +102,9 @@ namespace HwProj.Models.ManagerModels
 		public bool RememberMe { get; set; }
 	}
 
+	/// <summary>
+	/// Модель формы "забыли пароль"
+	/// </summary>
 	public class ForgotViewModel
 	{
 		[Required]

@@ -14,12 +14,6 @@
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.HiddenFor(user => user.Id)
-    </div>
-    <div class="form-group">
-        @Html.HiddenFor(user => user.Role)
-    </div>
-    <div class="form-group">
         @Html.LabelFor(user => user.Name, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.TextBoxFor(user => user.Name, new { @class = "form-control" })
@@ -71,6 +65,12 @@
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Сохранить" class="btn btn-default" />
         </div>
+    </div>
+    <div class="form-group">
+        @Html.HiddenFor(user => user.Id)
+    </div>
+    <div class="form-group">
+        @Html.HiddenFor(user => user.Role)
     </div>
     <p>
         @Html.Label("Unhappy?")
